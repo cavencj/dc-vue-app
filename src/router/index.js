@@ -4,8 +4,6 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  // 哈斯
-  mode: 'history',
   scrollBehavior(to, from, savedPosition) {
     // 兼容
     if (savedPosition) {
@@ -16,23 +14,9 @@ export default new Router({
   },
   routes: [
     {
-      // 重定向首页
       path: '/',
-      redirect: '/doctor/list'
-    },
-    {
-      // 医生列表
-      path: '/doctor/list',
-      component(resolve) {
-        require(['../views/doctor/list.vue'], resolve);
-      }
-    },
-    {
-      // 医生详情
-      path: '/doctor/detail/:doctorId',
-      component(resolve) {
-        require(['../views/doctor/detail.vue'], resolve);
-      }
-    },
+      name: 'index',
+      component: () => import('@/views')
+    }
   ]
 })

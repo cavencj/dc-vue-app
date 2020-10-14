@@ -3,7 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-
+const dvgisDist = './node_modules/@dvgis'
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -26,6 +26,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'dvgis':path.resolve(__dirname,'..', dvgisDist)
     }
   },
   module: {

@@ -1,30 +1,35 @@
 <template>
   <div id="app">
-    <loading-view
-      :text="loadingText"
-      v-if="isLoading">
-
-    </loading-view>
-    <router-view/>
+   <router-view />
   </div>
 </template>
 
 <script>
-  import loadingView from './components/loading'
-  import {mapGetters} from 'vuex';
 
-  export default {
-    components: {
-      loadingView
-    },
-    computed: {
-      ...mapGetters('loading', [
-        'isLoading',
-        'loadingText'
-      ]),
-    },
-  }
+
+export default {
+  name:'App'
+
+};
 </script>
 
-<style>
+
+<style lang="scss">
+body,html,#viewer-container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+}
+
 </style>
+<style lang="scss" scoped>
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+</style>
+
